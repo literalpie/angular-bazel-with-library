@@ -10,12 +10,13 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@bazel/angular:build",
           "options": {
-            "tsConfig": "projects/my-lib/tsconfig.lib.json",
-            "project": "projects/my-lib/ng-package.json"
-          },
-          "configurations": {
+            "options": {
+              "targetLabel": "//projects/my-lib/src",
+              "bazelCommand": "build"
+            },
+            "configurations": {
             "production": {
               "tsConfig": "projects/my-lib/tsconfig.lib.prod.json"
             }
