@@ -55,22 +55,10 @@
             "prefix": "app",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
+                    "builder": "@bazel/angular:build",
                     "options": {
-                        "outputPath": "dist/my-app",
-                        "index": "projects/my-app/src/index.html",
-                        "main": "projects/my-app/src/main.ts",
-                        "polyfills": "projects/my-app/src/polyfills.ts",
-                        "tsConfig": "projects/my-app/tsconfig.app.json",
-                        "aot": true,
-                        "assets": [
-                            "projects/my-app/src/favicon.ico",
-                            "projects/my-app/src/assets"
-                        ],
-                        "styles": [
-                            "projects/my-app/src/styles.scss"
-                        ],
-                        "scripts": []
+                        "targetLabel": "//projects/my-app/src",
+                        "bazelCommand": "build"
                     },
                     "configurations": {
                         "production": {

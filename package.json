@@ -4,7 +4,8 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "bazel build //projects/my-lib/src",
+        "build:lib": "ng build my-lib",
+        "build:app": "ng build my-app",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
