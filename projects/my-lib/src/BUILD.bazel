@@ -12,7 +12,7 @@ ts_library(
         exclude = ["**/*.spec.ts", "**/_stories/**", "test.ts"],
     ),
     angular_assets = glob(["**/*.html"]),
-    module_name = "@hyland/ui",
+    module_name = "@literalpie/my-lib",
     deps = [
         "@npm//@angular/common",
         "@npm//@angular/core",
