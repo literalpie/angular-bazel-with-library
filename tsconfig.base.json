@@ -16,7 +16,7 @@
       "dom"
     ],
     "paths": {
-      "my-lib": [
+      "@literalpie/my-lib": [
         "dist/my-lib/my-lib",
         "dist/my-lib"
       ]

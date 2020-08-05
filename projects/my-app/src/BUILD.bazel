@@ -1,0 +1,30 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "multi_sass_binary", "sass_binary", "sass_library")
+
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+sass_binary(
+    name = "styles",
+    src = "app/app.component.scss",
+)
+
+ts_library(
+    use_angular_plugin = True,
+    name = "src",
+    srcs = glob(
+        ["**/*.ts"],
+        exclude = ["**/*.spec.ts", "**/_stories/**", "test.ts"],
+    ),
+    angular_assets = [
+        ":styles",
+    ] + glob(["**/*.html"]),
+    module_name = "@literalpie/my-app",
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/platform-browser-dynamic",
+        "@npm//@angular/platform-browser",
+        "@npm//@angular/core",
+        "//projects/my-lib/src"
+    ],
+)
