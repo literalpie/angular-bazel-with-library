@@ -16,6 +16,9 @@ ts_library(
     deps = [
         "@npm//@angular/common",
         "@npm//@angular/core",
+        "@npm//@angular/forms",
+        "@npm//@angular/cdk",
+        "@npm//@angular/compiler-cli",
         "@npm//@types",
         "@npm//rxjs"
     ],
