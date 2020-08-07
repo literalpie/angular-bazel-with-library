@@ -35,12 +35,12 @@ http_archive(
 ####################################
 # Load and install our dependencies downloaded above.
 
-load("@build_bazel_rules_nodejs//:index.bzl", "npm_install")
+load("@build_bazel_rules_nodejs//:index.bzl", "npm_install", "yarn_install")
 
-npm_install(
+yarn_install(
     name = "npm",
     package_json = "//:package.json",
-    package_lock_json = "//:package-lock.json",
+    yarn_lock = "//:yarn.lock",
 )
 
 load("@npm//@bazel/protractor:package.bzl", "npm_bazel_protractor_dependencies")
