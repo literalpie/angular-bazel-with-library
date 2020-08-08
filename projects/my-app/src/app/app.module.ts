@@ -4,6 +4,7 @@ import {MyLibModule} from '@literalpie/my-lib';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { OAuthModule } from "angular-oauth2-oidc";
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     BrowserModule,
     MyLibModule,
+    OAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

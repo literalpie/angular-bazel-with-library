@@ -12,13 +12,13 @@ sass_library(
   ],
 )
 
-sass_binary(
-  name = "global-styles",
-  src = "styles.scss",
-  deps = [
-    ":angular_material_theming"
-  ]
-)
+# sass_binary(
+#   name = "global-styles",
+#   src = "styles.scss",
+#   deps = [
+#     ":angular_material_theming"
+#   ]
+# )
 
 sass_binary(
     name = "app-styles",
@@ -42,6 +42,7 @@ ts_library(
         "@npm//@angular/platform-browser-dynamic",
         "@npm//@angular/platform-browser",
         "@npm//@angular/core",
+        "@npm//angular-oauth2-oidc",
         "@npm//rxjs",
         "//projects/my-lib/src",
     ],
@@ -51,7 +52,7 @@ ts_library(
 _ASSETS = [
     # This label references an output of the "global-styles" sass_binary above.
     # it comes from the name of the input file
-    ":styles.css",
+    # ":styles.css",
 
     # We load zone.js outside the bundle. That's because it's a "pollyfill"
     # which speculates that such features might be available in a browser.
