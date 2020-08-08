@@ -1,0 +1,19 @@
+package(default_visibility = ["//visibility:public"])
+
+load("//tools:angular_ts_library.bzl", "ng_ts_library")
+
+ng_ts_library(
+    name = "inner",
+    srcs = [
+        "inner.directive.ts",
+        "inner.module.ts",
+        "public-api.ts",
+    ],
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/compiler-cli",
+        "@npm//@angular/core",
+        "@npm//@angular/forms",
+        "@npm//@angular/cdk",
+    ],
+)

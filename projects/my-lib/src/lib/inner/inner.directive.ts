@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 
 /** A directive that can be added to Material icons to use the @hyland/icons font */
 @Directive({
@@ -8,4 +8,8 @@ import { Directive } from '@angular/core';
     class: 'inner-directive',
   },
 })
-export class InnerDirective { }
+export class InnerDirective { 
+
+  @Input()
+  libInner = 7;
+}

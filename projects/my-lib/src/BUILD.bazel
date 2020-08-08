@@ -2,24 +2,26 @@ package(default_visibility = ["//visibility:public"])
 
 load("@io_bazel_rules_sass//:defs.bzl", "multi_sass_binary", "sass_binary", "sass_library")
 
-load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools:angular_ts_library.bzl", "ng_ts_library")
 
-ts_library(
-    use_angular_plugin = True,
+ng_ts_library(
+    # use_angular_plugin = True,
     name = "src",
-    srcs = glob(
-        ["**/*.ts"],
-        exclude = ["**/*.spec.ts", "**/_stories/**", "test.ts"],
-    ),
-    angular_assets = glob(["**/*.html"]),
+    srcs = [
+        "index.ts",
+        "public-api.ts",
+        "lib/my-lib.component.ts",
+        "lib/my-lib.module.ts",
+        "lib/my-lib.service.ts",
+    ],
+    # angular_assets = glob(["**/*.html"]),
     module_name = "@literalpie/my-lib",
     deps = [
         "@npm//@angular/common",
         "@npm//@angular/core",
-        "@npm//@angular/forms",
-        "@npm//@angular/cdk",
-        "@npm//@angular/compiler-cli",
+        # "@npm//@angular/compiler-cli",
         "@npm//@types",
-        "@npm//rxjs"
+        "@npm//rxjs",
+        "//projects/my-lib/src/lib/inner"
     ],
 )
