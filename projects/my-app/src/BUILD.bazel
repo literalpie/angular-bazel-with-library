@@ -18,12 +18,14 @@ sass_binary(
   src = "styles.scss",
   deps = [
     ":angular_material_theming"
-  ]
+  ],
+  sourcemap = False,
 )
 
 sass_binary(
     name = "app-styles",
     src = "app/app.component.scss",
+    sourcemap = False,
 )
 
 ng_ts_library(
@@ -105,8 +107,11 @@ ts_devserver(
     ],
     # Serve these files in addition to the JavaScript bundle
     static_files = _ASSETS + [
-      ":inject_scripts_for_dev"
+      ":inject_scripts_for_dev",
+      "//projects/my-app/src/assets",
     ],
     # Tell Bazel to build the sources first
-    deps = [":src"],
+    deps = [
+        ":src",
+    ],
 )
